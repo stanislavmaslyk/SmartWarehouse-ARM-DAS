@@ -1,6 +1,5 @@
 #include <warehouse/core/Product.hpp>
 #include <stdexcept>
-#include <format> // C++20: форматированный вывод
 
 namespace warehouse::core {
 
