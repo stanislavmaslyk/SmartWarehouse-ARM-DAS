@@ -4,9 +4,11 @@
 #include <string_view>
 #include <iostream>
 
-namespace warehouse::core {
+namespace warehouse::core 
+{
 
-class Product {
+class Product 
+{
 private:
     std::string m_sku;       // Артикул товара (SKU)
     std::string m_name;      // Наименование
