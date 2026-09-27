@@ -6,9 +6,6 @@
 
 namespace warehouse::core {
 
-/**
- * @brief Абстрактный базовый класс складской единицы (SOLID: Open-Closed Principle).
- */
 class Product {
 private:
     std::string m_sku;       // Артикул товара (SKU)
@@ -37,7 +34,7 @@ public:
     // 1. Полиморфный расчет общей стоимости партии с учетом специфики категории
     [[nodiscard]] virtual double calculateTotalCost() const = 0;
     
-    // 2. Идентификатор типа продукта (нужен будет для сериализации в JSON/Binary)
+    // 2. Идентификатор типа продукта
     [[nodiscard]] virtual std::string_view getCategoryName() const noexcept = 0;
 
     // Виртуальная печать карточки товара
