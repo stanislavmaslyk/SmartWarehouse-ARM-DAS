@@ -9,10 +9,11 @@ private:
     int m_expiryDays{0}; // Дней до окончания срока годности
 
 public:
-    PerishableProduct(std::string_view sku, 
-                      std::string_view name, 
-                      double basePrice, 
-                      int quantity, 
+    PerishableProduct(std::string_view sku,
+                      std::string_view name,
+                      double basePrice,
+                      int quantity,
+                      unsigned minThreshold,
                       int expiryDays);
 
     [[nodiscard]] int getExpiryDays() const noexcept { return m_expiryDays; }

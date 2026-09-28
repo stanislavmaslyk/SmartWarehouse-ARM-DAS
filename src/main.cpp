@@ -16,8 +16,8 @@ int main() {
 
     try {
         // Создаем скоропортящиеся товары
-        warehouse::core::PerishableProduct milk("MILK-101", "Молоко 3.2%", 2.50, 40, 10);
-        warehouse::core::PerishableProduct yogurt("YOG-202", "Йогурт Греческий", 3.00, 20, 2);
+        warehouse::core::PerishableProduct milk("MILK-101", "Молоко 3.2%", 2.50, 40, 10, 5);
+        warehouse::core::PerishableProduct yogurt("YOG-202", "Йогурт Греческий", 3.00, 20, 2, 3);
 
         milk.printInfo();
         yogurt.printInfo();

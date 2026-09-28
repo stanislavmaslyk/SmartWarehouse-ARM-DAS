@@ -3,13 +3,14 @@
 
 namespace warehouse::core {
 
-PerishableProduct::PerishableProduct(std::string_view sku, 
-                                     std::string_view name, 
-                                     double basePrice, 
-                                     int quantity, 
+PerishableProduct::PerishableProduct(std::string_view sku,
+                                     std::string_view name,
+                                     double basePrice,
+                                     int quantity,
+                                     unsigned minThreshold,
                                      int expiryDays)
-    : Product(sku, name, basePrice, quantity), 
-      m_expiryDays(expiryDays) 
+    : Product(sku, name, basePrice, quantity, minThreshold),
+      m_expiryDays(expiryDays)
 {
     if (m_expiryDays < 0) {
         throw std::invalid_argument("Срок годности не может быть отрицательным.");

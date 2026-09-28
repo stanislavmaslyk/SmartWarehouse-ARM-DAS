@@ -5,7 +5,8 @@
 #include <warehouse/core/Product.hpp>
 #include <memory>
 
-namespace warehouse::service {
+namespace warehouse::service 
+{
 
 class WarehouseService
 {

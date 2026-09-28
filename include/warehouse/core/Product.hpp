@@ -14,10 +14,11 @@ private:
     std::string m_name;      // Наименование
     double m_basePrice{0.0}; // Базовая стоимость за единицу
     int m_quantity{0};       // Текущий остаток на складе
+    unsigned m_minThreshold{0};
 
 public:
     // Конструктор: строковые параметры принимаются по std::string_view
-    Product(std::string_view sku, std::string_view name, double basePrice, int quantity);
+    Product(std::string_view sku, std::string_view name, double basePrice, int quantity, unsigned minThreshold);
 
     // Виртуальный деструктор - фундамент полиморфной иерархии
     virtual ~Product() = default;
@@ -27,6 +28,8 @@ public:
     [[nodiscard]] std::string_view getName() const noexcept { return m_name; }
     [[nodiscard]] double getBasePrice() const noexcept { return m_basePrice; }
     [[nodiscard]] int getQuantity() const noexcept { return m_quantity; }
+    [[nodiscard]] unsigned getMinThreshold() const noexcept { return m_minThreshold; }
+    
 
     // Бизнес-методы изменения количества
     void increaseQuantity(int count);
