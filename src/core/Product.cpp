@@ -15,6 +15,9 @@ Product::Product(std::string_view sku, std::string_view name, double basePrice, 
         throw std::invalid_argument("Базовая цена не может быть отрицательной.");
     if (m_quantity < 0)
         throw std::invalid_argument("Количество на складе не может быть отрицательным.");
+    if (m_minThreshold < 0)
+        throw std::invalid_argument("Порог дифицита не может быть отрицательной.");
+        
     // m_minThreshold is unsigned, so it can never be negative - no validation needed
 }
 
@@ -33,6 +36,11 @@ void Product::decreaseQuantity(int count)
         // Исключение времени выполнения бизнес-логики
         throw std::runtime_error("Ошибка списания: недостаточно товара на складе.");
     m_quantity -= count;
+}
+
+double Product::calculateTotalCost() const
+{
+    return baseCost() * discountFactor() + insuranceCost();
 }
 
 void Product::printInfo() const 
