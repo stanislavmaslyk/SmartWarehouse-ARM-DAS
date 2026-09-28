@@ -26,7 +26,4 @@ double ElectronicsProduct::insuranceCost() const noexcept
 [[nodiscard]] int ElectronicsProduct::getGuarantee() const noexcept { return m_guarantee; }
 [[nodiscard]] std::string_view ElectronicsProduct::getCategoryName() const noexcept { return "Электронный товар"; }
 
-void ElectronicsProduct
-
-
 }
