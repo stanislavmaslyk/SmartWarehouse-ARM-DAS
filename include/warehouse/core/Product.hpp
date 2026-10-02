@@ -38,9 +38,6 @@ public:
     void increaseQuantity(int count);
     void decreaseQuantity(int count);
 
-    // ЧИСТО ВИРТУАЛЬНЫЙ ИНТЕРФЕЙС
-    // 1. Полиморфный расчет общей стоимости партии с учетом специфики категории
-    // Product: формула final, хук с дефолтом
     [[nodiscard]] virtual double discountFactor() const noexcept { return 1.0; }
 
     // СТРАХОВКА: сколько денег добавляем. По умолчанию - ноль.

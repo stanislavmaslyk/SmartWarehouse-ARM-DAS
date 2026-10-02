@@ -13,11 +13,15 @@ namespace warehouse::service
     
     [[nodiscard]] warehouse::core::Product* WarehouseService::findProduct(std::string_view sku) const noexcept
     {
-
+        auto it = m_stock.find(std::string(sku));
+        if(it != m_stock.end())
+            return it->second.get();
+        else
+            return nullptr;
     }
 
     [[nodiscard]] bool WarehouseService::removeProduct(std::string_view sku)
     {
-
+        return m_stock.erase(std::string(sku));
     }
 }

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <memory> // std::unique_ptr
+#include <memory>
 #include <warehouse/core/PerishableProduct.hpp>
 #ifdef _WIN32
 #include <windows.h> // Нужно только для Windows

@@ -26,4 +26,10 @@ double ElectronicsProduct::insuranceCost() const noexcept
 [[nodiscard]] int ElectronicsProduct::getGuarantee() const noexcept { return m_guarantee; }
 [[nodiscard]] std::string_view ElectronicsProduct::getCategoryName() const noexcept { return "Электронный товар"; }
 
+void ElectronicsProduct::printInfo() const
+{
+    Product::printInfo();
+    std::cout << " | Итог партии c учетом страховки(0.03 месяц): " << calculateTotalCost() << " руб.\n"
+              << " | Гарантия на продукт: " << m_guarantee << " месяцев. /" << std::endl;
+}
 }

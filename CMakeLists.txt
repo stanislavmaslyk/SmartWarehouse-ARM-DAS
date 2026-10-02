@@ -14,6 +14,10 @@ add_library(warehouse_core STATIC
     src/core/Product.cpp
     include/warehouse/core/PerishableProduct.hpp
     src/core/PerishableProduct.cpp
+    include/warehouse/core/ElectronicsProduct.hpp
+    src/core/ElectronicsProduct.cpp
+    include/warehouse/service/WarehouseService.hpp
+    src/service/WarehouseService.cpp
 )
 
 target_include_directories(warehouse_core PUBLIC

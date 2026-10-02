@@ -24,5 +24,4 @@ public:
 
     [[nodiscard]] bool removeProduct(std::string_view sku);
 };
-
 }

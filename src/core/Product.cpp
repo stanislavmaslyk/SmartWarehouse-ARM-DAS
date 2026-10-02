@@ -21,6 +21,11 @@ Product::Product(std::string_view sku, std::string_view name, double basePrice, 
     // m_minThreshold is unsigned, so it can never be negative - no validation needed
 }
 
+[[nodiscard]] double Product::baseCost() const noexcept
+{
+    return m_basePrice;
+}
+
 void Product::increaseQuantity(int count) 
 {
     if (count <= 0)
